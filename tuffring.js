@@ -78,4 +78,51 @@ return `<img src="${ico}" class="favIcon" width="16" height="16" onerror="this.o
 
 
 
- d
+// styleMEOW unfinished part
+const style = `
+ ${themeBlock}
+   #${tuffring_DockingId}, #${tuffring_MembersListIdent} {
+    margin: 0 auto;
+   padding: 15px;
+  font-family: system-ui, sans-serif;
+ font-size: 14px;
+  border-radius: 8px;
+ max-width: 600px;
+  }
+   #${tuffring_DockingId} table {
+   margin: 0 auto;
+    width: 100%;
+  border-spacing: 0;
+}
+    #${tuffring_DockingId} td {
+padding: 10px;
+}
+  .${tuffring_configurationsettings.tuffring_uniqueRingID}-prev { text-align: right; }
+.${tuffring_configurationsettings.tuffring_uniqueRingID}-info { text-align: center; }
+.${tuffring_configurationsettings.tuffring_uniqueRingID}-next { text-align: left; }
+ .${tuffring_configurationsettings.tuffring_uniqueRingID}-links { font-size: small; }
+
+.${tuffring_configurationsettings.tuffring_uniqueRingID}-footer {
+  text-align: centr;
+font-size: 12px;
+ margin-top: 10px;
+  opacity: 0.7;
+}
+ #${tuffring_MembersListIdent} ul {
+ list-style: none;
+padding-left: 0;
+text-align: center;
+}
+ #${tuffring_MembersListIdent} li {
+margin-bottom: 6px;
+}
+img.favIcon {
+ width: 16px;
+height: 16px;
+ vertical-align: middle;
+    margin-right: 4px;
+}
+ `;
+const styleTag = document.createelement("style");
+ styleTag.textContent = style;
+document.head.appendChild(styleTag);
