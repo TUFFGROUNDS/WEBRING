@@ -164,5 +164,41 @@ const styleTag = document.createElement("style");
 document.head.appendChild(styleTag);
 
 
+   const memberListArea = document.getElementById(tuffring_MembersListIdent);
+  if (memberListArea) {
+    const stripRegex = /^https?:\/\/|\/$/g;
+    const linksHTML = tuffring_configurationsettings.tuffring_WebRingMemberSites.map(site => {
+      const label = site.replace(stripRegex, "");
+      return `<li><a href="${site}">${label}</a></li>`;
+    }).join("");
+    memberListArea.innerHTML = `<ul>${linksHTML}</ul>`;
+  }
  
+ const widgetArea = document.getElementById(tuffring_DockingId);
+   if (widgetArea) {
+    if (cur_MemberIndex === -1) {
+   widgetArea.innerHTML = `
+  <table>
+    <tr>
+
+    //
+ <td>This website hasn't joined or wasn't approved  "${tuffring_configurationsettings.tuffring_WebRingTitle}" yet. Visit <a href="'${tuffring_configurationsettings.tuffring_LinkToJoinPageURL}'">this page</a> to join or contact the admin.</td>
+ </tr>
+   </table>
+ `;
+} else {
+let leftIndex = ThrowDiceToTheLeft;
+ let rightIndex = ThrowDiceToTheRight;
+if (tuffring_configurationsettings.tuffring_shuffle_PrevNext_Links) {
+ const valid = tuffring_configurationsettings.tuffring_WebRingMemberSites
+.map((_, i) => i)
+.filter(i => i !== cur_MemberIndex);
+ if (valid.length > 1) {
+  leftIndex = valid[Math.floor(Math.random() * valid.length)];
+const rightCandidates = valid.filter(i => i !== leftIndex);
+rightIndex = rightCandidates[Math.floor(Math.random() * rightCandidates.length)];
+} else if (valid.length === 1) {
+  leftIndex = rightIndex = valid[0];
+   }
+}
 
