@@ -103,7 +103,7 @@ padding: 10px;
  .${tuffring_configurationsettings.tuffring_uniqueRingID}-links { font-size: small; }
 
 .${tuffring_configurationsettings.tuffring_uniqueRingID}-footer {
-  text-align: centr;
+  text-align: center;
 font-size: 12px;
  margin-top: 10px;
   opacity: 0.7;
@@ -123,6 +123,6 @@ height: 16px;
     margin-right: 4px;
 }
  `;
-const styleTag = document.createelement("style");
+const styleTag = document.createElement("style");
  styleTag.textContent = style;
 document.head.appendChild(styleTag);
