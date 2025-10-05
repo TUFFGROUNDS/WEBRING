@@ -181,8 +181,8 @@ document.head.appendChild(styleTag);
   <table>
     <tr>
 
-    //
- <td>This website hasn't joined or wasn't approved  "${tuffring_configurationsettings.tuffring_WebRingTitle}" yet. Visit <a href="'${tuffring_configurationsettings.tuffring_LinkToJoinPageURL}'">this page</a> to join or contact the admin.</td>
+
+ <td>This website hasn't joined or wasn't approved by the admin of "${tuffring_configurationsettings.tuffring_WebRingTitle}" yet. Visit <a href="${tuffring_configurationsettings.tuffring_LinkToJoinPageURL}">this page</a> to join or contact the admin.</td>
  </tr>
    </table>
  `;
@@ -201,4 +201,3 @@ rightIndex = rightCandidates[Math.floor(Math.random() * rightCandidates.length)]
   leftIndex = rightIndex = valid[0];
    }
 }
-
