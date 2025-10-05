@@ -78,6 +78,42 @@ return `<img src="${ico}" class="favIcon" width="16" height="16" onerror="this.o
 
 
 
+  const DefaultThemeX = tuffring_configurationsettings.tuffring_defaultStyleScheme;
+
+  const LightBrightModeTheme = `
+    #${tuffring_DockingId}, #${tuffring_MembersListIdent} {
+      background: #fefefe;
+      color: #202020;
+      border: 1px solid #ddd;
+    }
+    #${tuffring_DockingId} a { color: #1a73e8; }
+    #${tuffring_DockingId} a:visited { color: #6a1b9a; }
+  `;
+
+  const DarkModeTheme = `
+    #${tuffring_DockingId}, #${tuffring_MembersListIdent} {
+      background: #121212;
+      color: #e0e0e0;
+      border: 1px solid #333;
+    }
+    #${tuffring_DockingId} a { color: #8ab4f8; }
+    #${tuffring_DockingId} a:visited { color: #c792ea; }
+  `;
+
+  let themeBlock = "";
+
+  if (DefaultThemeX === "light") {
+    themeBlock = LightBrightModeTheme;
+  } else if (DefaultThemeX === "dark") {
+    themeBlock = DarkModeTheme;
+  } else {
+    // auto = system preference
+    themeBlock = `
+      @media (prefers-color-scheme: dark) { ${DarkModeTheme} }
+      @media (prefers-color-scheme: light) { ${LightBrightModeTheme} }
+    `;
+  }
+
 // styleMEOW unfinished part
 const style = `
  ${themeBlock}
@@ -130,39 +166,3 @@ document.head.appendChild(styleTag);
 
  // restruc syntax b4
 
-
-  const DefaultThemeX = tuffring_configurationsettings.tuffring_defaultStyleScheme;
-
-  const LightBrightModeTheme = `
-    #${tuffring_DockingId}, #${tuffring_MembersListIdent} {
-      background: #fefefe;
-      color: #202020;
-      border: 1px solid #ddd;
-    }
-    #${tuffring_DockingId} a { color: #1a73e8; }
-    #${tuffring_DockingId} a:visited { color: #6a1b9a; }
-  `;
-
-  const DarkModeTheme = `
-    #${tuffring_DockingId}, #${tuffring_MembersListIdent} {
-      background: #121212;
-      color: #e0e0e0;
-      border: 1px solid #333;
-    }
-    #${tuffring_DockingId} a { color: #8ab4f8; }
-    #${tuffring_DockingId} a:visited { color: #c792ea; }
-  `;
-
-  let themeBlock = "";
-
-  if (DefaultThemeX === "light") {
-    themeBlock = LightBrightModeTheme;
-  } else if (DefaultThemeX === "dark") {
-    themeBlock = DarkModeTheme;
-  } else {
-    // auto = system preference
-    themeBlock = `
-      @media (prefers-color-scheme: dark) { ${DarkModeTheme} }
-      @media (prefers-color-scheme: light) { ${LightBrightModeTheme} }
-    `;
-  }
