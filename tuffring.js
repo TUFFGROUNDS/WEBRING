@@ -1,5 +1,5 @@
 (function () {
- // ####### CONFIGURATION AREA #######
+ 
  const tuffring_configurationsettings = {
      tuffring_uniqueRingID: "",               // Choose a unique ring-id
   tuffring_WebRingTitle: "",                 // This is the title that might get displayed within the webring widget
@@ -114,7 +114,7 @@ return `<img src="${ico}" class="favIcon" width="16" height="16" onerror="this.o
     `;
   }
 
-// styleMEOW unfinished part
+
 const style = `
  ${themeBlock}
    #${tuffring_DockingId}, #${tuffring_MembersListIdent} {
